@@ -1,0 +1,261 @@
+@import url(https://fonts.googleapis.com/css?family=Muli);
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  color: #071108;
+}
+
+body {
+  background-color: #F2EFE9;
+  font-family: 'Muli', sans-serif;
+}
+
+.top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title {
+  display: none;
+}
+
+.group-label {
+  display: none;
+  -webkit-transition: 75ms ease-out;
+  transition: 75ms ease-out;
+}
+
+.full-table {
+  margin: 0 auto 20vh;
+  width: 100vw;
+  position: relative;
+}
+
+.main-table {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  padding: 2vw;
+}
+
+.group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.element, .holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 5vw;
+  height: 5vw;
+  margin: 1px;
+  border-radius: 2px;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.number {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  font-size: 1.2vw;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.symbol {
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+  font-size: 2.1vw;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  margin-bottom: 8%;
+  font-size: 1.4vw;
+  -webkit-transition: 250ms linear;
+  transition: 250ms linear;
+  opacity: 0;
+}
+
+.element__expanded {
+  height: calc(5vw * 1.97);
+  width: calc(5vw * 1.97);
+}
+.element__expanded .number {
+  font-size: 1.7vw;
+}
+.element__expanded .symbol {
+  left: 8%;
+  bottom: 26%;
+  font-size: 3.2vw;
+}
+.element__expanded .name {
+  opacity: 1;
+}
+
+.holder {
+  border: 2px dotted #ccc;
+}
+
+.f-block {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: calc((2 * 5vw) + 2vw + 6px);
+}
+
+.series {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (min-width: 761px) {
+  .group-label {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 6vw;
+    width: 42%;
+    font-size: 3.5vw;
+    border-radius: 3vw;
+  }
+
+  .title {
+    display: inline;
+    font-size: 6vw;
+    margin: 3vh 0 2vh;
+    color: #071108;
+  }
+
+  .element:hover, .holder:hover {
+    -webkit-transition-delay: 30ms;
+            transition-delay: 30ms;
+    cursor: pointer;
+    height: calc(5vw * 1.97);
+    width: calc(5vw * 1.97);
+  }
+  .element:hover .symbol, .holder:hover .symbol {
+    font-size: 3.2vw;
+    bottom: 26%;
+  }
+  .element:hover .number, .holder:hover .number {
+    font-size: 1.7vw;
+  }
+  .element:hover .name, .holder:hover .name {
+    opacity: 1;
+  }
+
+  .holder:hover {
+    -webkit-transition-delay: 0;
+            transition-delay: 0;
+    cursor: pointer;
+    height: 5vw;
+    width: 5vw;
+  }
+}
+.other-non-metal {
+  background-color: #1AFF00;
+}
+
+.alkali-metal {
+  background-color: #FF0C00;
+}
+
+.alkaline-earth-metal {
+  background-color: #FF6700;
+}
+
+.transition-metal {
+  background-color: #FF54A4;
+}
+
+.metalloid {
+  background-color: #FFB800;
+}
+
+.post-transition-metal {
+  background-color: #FF762E;
+}
+
+.halogen {
+  background-color: #00EEFF;
+}
+
+.noble-gas {
+  background-color: #0E94FF;
+}
+
+.rare-earth {
+  background-color: #FF006A;
+}
+
+.actinoid {
+  background-color: #FF00C6;
+}

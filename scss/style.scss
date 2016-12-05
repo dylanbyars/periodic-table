@@ -1,0 +1,230 @@
+// Import fonts
+@import url(https://fonts.googleapis.com/css?family=Muli);
+// Set sizing variables
+$box-dimension: 5vw;
+$expanded-dimension: calc(#{$box-dimension} * 1.97);
+$f-block--padding-left: calc((2 * #{$box-dimension}) + 2vw + 6px);
+$f-block--padding-right: calc(#{$box-dimension} + 2vw + 2px);
+// Color palette
+$background--color: #F2EFE9;
+$text--color: #071108;
+$other-non-metal--color: #1AFF00;
+$alkali-metal--color: #FF0C00;
+$alkaline-earth-metal--color: #FF6700;
+$transition-metal--color: #FF54A4;
+$metalloid--color: #FFB800;
+$post-transition-metal--color: #FF762E;
+$halogen--color: #00EEFF;
+$noble-gas--color: #0E94FF;
+$lanthanoid--color: #FF006A;
+$actinoid--color: #FF00C6;
+// Begin styles
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  color: $text--color
+}
+
+body {
+  background-color: $background--color;
+  font-family: 'Muli', sans-serif;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  display: none;
+}
+
+.group-label {
+  display: none;
+  transition: 75ms ease-out;
+}
+
+.full-table {
+  margin: 0 auto 20vh;
+  width: 100vw;
+  position: relative;
+}
+
+.main-table {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 2vw;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.element {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: $box-dimension;
+  height: $box-dimension;
+  margin: 1px;
+  border-radius: 2px;
+  transition: 0.2s linear;
+}
+
+.number {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  font-size: 1.2vw;
+  transition: inherit;
+}
+
+.symbol {
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+  font-size: 2.1vw;
+  transition: inherit;
+}
+
+.name {
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 8%;
+  font-size: 1.4vw;
+  transition: 250ms linear;
+  opacity: 0;
+}
+
+.element__expanded {
+  height: $expanded-dimension;
+  width: $expanded-dimension;
+
+  .number {
+    font-size: 1.7vw;
+  }
+
+  .symbol {
+    left: 8%;
+    bottom: 26%;
+    font-size: 3.2vw;
+  }
+
+  .name {
+    opacity: 1;
+  }
+}
+
+.holder {
+  @extend .element;
+  border: 2px dotted #ccc;
+}
+
+.f-block {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  // The 2 series stack on top of each other in the f-block
+  padding-left: $f-block--padding-left;
+  // padding-right: $f-block--padding-right;
+  // margin-bottom: 20vh;
+}
+
+.series {
+  display: flex;
+  flex-direction: row;
+}
+
+// When an element is hovered on, it gets a bit bigger (for large screens)
+@media (min-width: 761px) {
+
+  .group-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vw;
+    width: 42%;
+    font-size: 3.5vw;
+    border-radius: 3vw;
+  }
+
+  .title {
+    display: inline;
+    font-size: 6vw;
+    margin: 3vh 0 2vh;
+    color: $text--color;
+  }
+
+  .element:hover {
+    transition-delay: 30ms;
+    cursor: pointer;
+    height: $expanded-dimension;
+    width: $expanded-dimension;
+
+    .symbol {
+      font-size: 3.2vw;
+      bottom: 26%;
+    }
+
+    .number {
+      font-size: 1.7vw;
+    }
+
+    .name {
+      opacity: 1;
+    }
+  }
+
+  // Holder pulses with the series it's holding a spot for... when I build it.
+  .holder:hover {
+    transition-delay: 0;
+    cursor: pointer;
+    height: $box-dimension;
+    width: $box-dimension;
+  }
+}
+
+// Set some colors
+.other-non-metal {
+  background-color: $other-non-metal--color;
+}
+
+.alkali-metal {
+  background-color: $alkali-metal--color;
+}
+
+.alkaline-earth-metal {
+  background-color: $alkaline-earth-metal--color;
+}
+
+.transition-metal {
+  background-color: $transition-metal--color;
+}
+
+.metalloid {
+  background-color: $metalloid--color;
+}
+
+.post-transition-metal {
+  background-color: $post-transition-metal--color;
+}
+
+.halogen {
+  background-color: $halogen--color;
+}
+
+.noble-gas {
+  background-color: $noble-gas--color;
+}
+
+.rare-earth {
+  background-color: $lanthanoid--color;
+}
+
+.actinoid {
+  background-color: $actinoid--color;
+}
